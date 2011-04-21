@@ -18,7 +18,7 @@ public class BomberMain extends JFrame
 	public static BomberSndEffect sndEffectSpeler = null;
 	public static final int shiftCount = 4;
 	//was public static final int size = 16;
-	public static final int size = 16;
+	public static final int size = 32;
 
 
 	@SuppressWarnings("deprecation")
@@ -63,7 +63,7 @@ public class BomberMain extends JFrame
 			new ErrorDialog(exception);
 		}
 		getContentPane().add(menu = new BomberMenu(this));
-		setResizable(false);//scherm kan niet groter gemaakt worden
+		setResizable(true);//scherm kan niet groter gemaakt worden
 		pack();
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int i = (dimension.width - getSize().width) / 2;
@@ -78,10 +78,10 @@ public class BomberMain extends JFrame
 	{
 		JDialog jdialog = new JDialog(this, "Loading Game...", false);
 		jdialog.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		jdialog.setSize(new Dimension(200, 0));
-		jdialog.setResizable(false);
-		int j = getLocation().x + (getSize().width-200 ) / 2;
-		int k = getLocation().y + getSize().height / 2;
+		jdialog.setSize(new Dimension(400, 0));
+		jdialog.setResizable(true);
+		int j = getLocation().x + (getSize().width-100 ) / 1;
+		int k = getLocation().y + getSize().height / 1;
 		jdialog.setLocation(j, k);
 		jdialog.show();
 		getContentPane().removeAll();

@@ -93,7 +93,8 @@ public class BomberMap extends JPanel
 		bonusRooster = null;
 		bombs = null;
 		bonuses = null;
-		level = levelRand.draw() % 2;
+		//was %2
+		level = levelRand.draw() % 4;
 		MediaTracker mediatracker = new MediaTracker(this);
 		//Waar staan de images van de map/vuurstenen die ontploffen kunnen 
 		try
@@ -161,7 +162,9 @@ public class BomberMap extends JPanel
 			}
 		}
 
+		//BomberRandInt bomberrandint = new BomberRandInt(2, 30);
 		BomberRandInt bomberrandint = new BomberRandInt(1, 15);
+		//for(int k2 = 0; k2 < 384; k2++)
 		for(int k2 = 0; k2 < 384; k2++)
 		{
 			int j1 = bomberrandint.draw();
@@ -175,9 +178,10 @@ public class BomberMap extends JPanel
 		//achtergrondkleur
 		backgroundColor = new Color(52, 108, 108);
 		//was setPreferredSize(new Dimension(272, 272));
-		setPreferredSize(new Dimension(272, 272));
+		setPreferredSize(new Dimension(554, 554));
 		setDoubleBuffered(true);
-		setBounds(0, 0, 17 << 4, 17 << 4);
+		//setBounds(0,0,17<< 4, 17 << 4);
+		setBounds(0, 0, 17 << 5, 17 << 5);
 		setOpaque(false);
 		bombermain.getLayeredPane().add(this, 1000);
 	}
@@ -185,7 +189,7 @@ public class BomberMap extends JPanel
 	{
 		gameOver = true;
 		//	paintImmediately(0, 0, 272, 272);
-		paintImmediately(0, 0, 272, 272);
+		paintImmediately(0, 0, 554, 554);
 	}
 	public synchronized void createBonus(int i, int j)
 	{
@@ -214,7 +218,7 @@ public class BomberMap extends JPanel
 				bonusRooster[bonus.r][bonus.c].kill();
 				bonusRooster[bonus.r][bonus.c] = null;
 				//was paintImmediately(bonus.r << 4, bonus.c << 4, 16, 16);
-				paintImmediately(bonus.r << 4, bonus.c << 4, 16, 16);
+				paintImmediately(bonus.r << 4, bonus.c << 4, 32, 32);
 				break;
 			}
 			k++;
@@ -417,12 +421,12 @@ public class BomberMap extends JPanel
 			{
 				g1.setColor(Color.black);
 				//was g1.fillRect(0,0,272,272)
-				g1.fillRect(0, 0, 272, 272);
+				g1.fillRect(0, 0, 554, 554);
 			} else
 			{
 				g1.setColor(backgroundColor);
 				//was g1.fillRect(0, 0, 272, 272);
-				g1.fillRect(0, 0, 272, 272);
+				g1.fillRect(0, 0, 554, 554);
 				for(int i = 0; i < 17; i++)
 				{
 					for(int j = 0; j < 17; j++)
@@ -430,12 +434,12 @@ public class BomberMap extends JPanel
 						if(rooster[i][j] > -1 && rooster[i][j] != 3 && rooster[i][j] != 7 && mapImages[level][rooster[i][j]] != null)
 						{
 							// was g1.drawImage(mapImages[level][rooster[i][j]], i << 4, j << 4, 16, 16, null);
-							g1.drawImage(mapImages[level][rooster[i][j]], i << 4, j << 4, 16, 16, null);
+							g1.drawImage(mapImages[level][rooster[i][j]], i << 8, j << 8, 32, 32, null);
 						} else
 							if(mapImages[level][2] != null)
 							{
 								//was g1.drawImage(mapImages[level][2], i << 4, j << 4, 16, 16, null);
-								g1.drawImage(mapImages[level][2], i << 4, j << 4, 16, 16, null);
+								g1.drawImage(mapImages[level][2], i << 8, j << 8, 32, 32, null);
 							}
 					}
 				}
@@ -476,25 +480,25 @@ public class BomberMap extends JPanel
 		{
 			graphics2d.setColor(Color.black);
 			//was graphics2d.fillRect(0, 0, 272, 272);
-			graphics2d.fillRect(0, 0, 272, 272);
+			graphics2d.fillRect(0, 0, 554, 554);
 		} else
 		{
 			graphics2d.setColor(backgroundColor);
 			//was graphics2d.fillRect(0, 0, 272, 272);
-			graphics2d.fillRect(0, 0, 272, 272);
+			graphics2d.fillRect(0, 0, 554, 554);
 			for(int i = 0; i < 17; i++)
 			{
 				for(int j = 0; j < 17; j++)
 				{
 					if(rooster[i][j] > -1 && rooster[i][j] != 3 && rooster[i][j] != 7 && mapImages[level][rooster[i][j]] != null)
 					{
-						//was graphics2d.drawImage(mapImages[level][rooster[i][j]], i << 4, j << 4, 16, 16, null);
-						graphics2d.drawImage(mapImages[level][rooster[i][j]], i << 4, j << 4, 16, 16, null);
+						graphics2d.drawImage(mapImages[level][rooster[i][j]], i << 4, j << 4, 16, 32, null);
+						//graphics2d.drawImage(mapImages[level][rooster[i][j]], i << 8, j << 8, 32, 32, null);
 					} else
 						if(mapImages[level][2] != null)
 						{
-							//was graphics2d.drawImage(mapImages[level][2], i << 4, j << 4, 16, 16, null);
-							graphics2d.drawImage(mapImages[level][2], i << 4, j << 4, 16, 16, null);
+							graphics2d.drawImage(mapImages[level][2], i << 4, j << 4, 16, 32, null);
+							//graphics2d.drawImage(mapImages[level][2], i << 8, j << 8, 32, 32, null);
 						}
 				}
 			}

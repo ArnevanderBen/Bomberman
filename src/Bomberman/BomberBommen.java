@@ -37,7 +37,7 @@ public class BomberBommen extends Thread
 	{
 		while(levend) 
 		{
-			map.paintImmediately(x, y, 16, 16);
+			map.paintImmediately(x, y, 32, 32);
 			frame = (frame + 1) % 2;
 			try
 			{
@@ -76,7 +76,7 @@ public class BomberBommen extends Thread
 			paint2D(g);
 		} else
 		{
-			g.drawImage(plaatjes[frame], x, y, 16, 16, null);
+			g.drawImage(plaatjes[frame], x, y, 32, 32, null);
 		}
 	}
 	//Paint images
@@ -86,7 +86,7 @@ public class BomberBommen extends Thread
 		graphics2d.setRenderingHints((RenderingHints)hints);
 		//was 
 		//graphics2d.drawImage(plaatjes[frame], x, y, 16, 16, null);
-		graphics2d.drawImage(plaatjes[frame], x, y, 16, 16, null);
+		graphics2d.drawImage(plaatjes[frame], x, y, 32, 32, null);
 	}
 	//Static Keys en Bepaalt het basistype van alle toetsen gebruikt om de verschillende aspecten van de rendering en imaging pijpleidingen controle
 	static 

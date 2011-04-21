@@ -319,23 +319,23 @@ public class BomberPlayer extends Thread
                             if(flag1)
                             {
                                 clear = true;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                                 y += k;
                                 clear = false;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                             }
                         }
                         if(flag1)
                         {
                             clear = true;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                             x -= byte2 / 4;
                             clear = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         } else
                         {
                             moving = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         }
                     } else
                     if((currentDirKeyDown & 8) > 0)
@@ -370,23 +370,23 @@ public class BomberPlayer extends Thread
                             if(flag2)
                             {
                                 clear = true;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                                 y += l;
                                 clear = false;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                             }
                         }
                         if(flag2)
                         {
                             clear = true;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                             x += byte2 / 4;
                             clear = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         } else
                         {
                             moving = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         }
                     } else
                     if((currentDirKeyDown & 1) > 0)
@@ -421,23 +421,23 @@ public class BomberPlayer extends Thread
                             if(flag3)
                             {
                                 clear = true;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                                 x += i1;
                                 clear = false;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                             }
                         }
                         if(flag3)
                         {
                             clear = true;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                             y -= byte2 / 4;
                             clear = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         } else
                         {
                             moving = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         }
                     } else
                     if((currentDirKeyDown & 2) > 0)
@@ -473,23 +473,23 @@ public class BomberPlayer extends Thread
                             if(flag4)
                             {
                                 clear = true;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                                 x += j1;
                                 clear = false;
-                                game.paintImmediately(x, y - byte3, 16, 22);
+                                game.paintImmediately(x, y - byte3,64, 88);
                             }
                         }
                         if(flag4)
                         {
                             clear = true;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                             y += byte2 / 4;
                             clear = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         } else
                         {
                             moving = false;
-                            game.paintImmediately(x, y - byte3, 16, 22);
+                            game.paintImmediately(x, y - byte3,64, 88);
                         }
                     }
                 }
@@ -498,7 +498,7 @@ public class BomberPlayer extends Thread
             {
                 frame = 0;
                 moving = false;
-                game.paintImmediately(x, y - byte3, 16, 22);
+                game.paintImmediately(x, y - byte3, 64, 22);
                 flag5 = keyPressed;
             } else
             if(!isDead && isExploding)
@@ -507,13 +507,13 @@ public class BomberPlayer extends Thread
                 {
                     isDead = true;
                 }
-                game.paintImmediately(x, y - byte3, 16, 22);
+                game.paintImmediately(x, y - byte3, 64, 88);
                 frame = (frame + 1) % 5;
             } else
             if(isDead)
             {
                 clear = true;
-                game.paintImmediately(x, y - byte3, 16, 22);
+                game.paintImmediately(x, y - byte3,64, 88);
                 break;
             }
             if(map.bonusRooster[x >> byte0][y >> byte0] != null)
@@ -561,11 +561,11 @@ public class BomberPlayer extends Thread
             if(moving)
             {
             	//was g1.drawImage(sprites[playerNo - 1][state][frame], x, y - 8, 16, 22, null);
-                g1.drawImage(sprites[playerNo - 1][state][frame], x, y - 8, 16, 22, null);
+                g1.drawImage(sprites[playerNo - 1][state][frame], x, y - 16,32, 44, null);
             } else
             {
             	//was g1.drawImage(sprites[playerNo - 1][state][frame], x, y - 8, 16, 22, null);
-                g1.drawImage(sprites[playerNo - 1][state][0], x, y - 8, 16, 22, null);
+                g1.drawImage(sprites[playerNo - 1][state][0], x, y - 16,32, 44, null);
             }
         }
     }
@@ -579,11 +579,11 @@ public class BomberPlayer extends Thread
             if(moving)
             {
             	//was graphics2d.drawImage(sprites[playerNo - 1][state][frame], x, y - 8, 16, 22, null);
-                graphics2d.drawImage(sprites[playerNo - 1][state][frame], x, y - 8, 16, 22, null);
+                graphics2d.drawImage(sprites[playerNo - 1][state][frame], x, y - 16,32, 44, null);
             } else
             {
             	//was graphics2d.drawImage(sprites[playerNo - 1][state][0], x, y - 8, 16, 22, null);
-                graphics2d.drawImage(sprites[playerNo - 1][state][0], x, y - 8, 16, 22, null);
+                graphics2d.drawImage(sprites[playerNo - 1][state][0], x, y - 16,32, 44, null);
             }
         }
     }

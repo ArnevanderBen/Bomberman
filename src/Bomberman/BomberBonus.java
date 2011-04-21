@@ -37,7 +37,7 @@ public class BomberBonus extends Thread
 	{
 		while(levend) 
 		{
-			map.paintImmediately(x, y, 16, 16);
+			map.paintImmediately(x, y, 32, 32);
 			frame = (frame + 1) % 2;
 			try
 			{
@@ -79,7 +79,7 @@ public class BomberBonus extends Thread
 			paint2D(g);
 		} else
 		{
-			g.drawImage(plaatjes[frame], x, y, 16, 16, null);
+			g.drawImage(plaatjes[frame], x, y, 32, 32, null);
 		}
 	}
 	//Paint van Images
@@ -89,7 +89,7 @@ public class BomberBonus extends Thread
 		graphics2d.setRenderingHints((RenderingHints)hints);
 
 		//was    graphics2d.drawImage(plaatjes[frame], x, y, 16, 16, null);
-		graphics2d.drawImage(plaatjes[frame], x, y, 16, 16, null);
+		graphics2d.drawImage(plaatjes[frame], x, y, 32, 32, null);
 	}
 	//Static laat ook weer de keys zien die gebruikt worden in het spel, de huidige keys. 
 	static 

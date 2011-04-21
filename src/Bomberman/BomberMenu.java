@@ -23,6 +23,8 @@ public class BomberMenu extends JPanel
 	private static Image buttonImagesUp[];
 	//Object hints
 	private static Object hints = null;
+	
+	double T = 4.5;
  
 
 	public BomberMenu(BomberMain bombermain)
@@ -31,7 +33,8 @@ public class BomberMenu extends JPanel
 		imageButtons = null;
 		selection = 0;
 		main = bombermain;
-		setPreferredSize(new Dimension(17 << 4, 17 << 4));
+		//Right shift with sign extension
+		setPreferredSize(new Dimension(17 << 5, 17 << 5));
 		setDoubleBuffered(true);
 		MediaTracker mediatracker = new MediaTracker(this);
 		try
@@ -59,7 +62,7 @@ public class BomberMenu extends JPanel
 			imageButtons[j] = new BomberImageButton(this, aimage);
 		}
 
-		int l = buttonImagesDown[0].getHeight(this) / ((32 / 16) * 2);
+		int l = buttonImagesDown[0].getHeight(this) / ((32 / 32) * 2);
 		for(int i1 = 0; i1 <= 4; i1++)
 		{
 			imageButtons[i1].setInfo(0, 280 / (32 / 16) + l * i1, i1);
@@ -111,7 +114,8 @@ public class BomberMenu extends JPanel
 		case 0: 
 		case 1: 
 		case 2: 
-			main.newGame(selection + 2);
+			//was main.newGame(selection + 4);
+			main.newGame(selection + 4);
 			break;
 
 		case 3: 
@@ -135,6 +139,7 @@ public class BomberMenu extends JPanel
 		}
 	}
 
+	double test = 17;
 	public void paint(Graphics g)
 	{
 		Graphics g1 = g;
@@ -143,7 +148,7 @@ public class BomberMenu extends JPanel
 			paint2D(g);
 		} else
 		{
-			g1.drawImage(backgroundImg, 0, 0, 17 << 4, 17 << 4, this);
+			g1.drawImage(backgroundImg, 0, 0, 17 << 5, 17	 << 5, this);
 		}
 		for(int i = 0; i < 5; i++)
 		{
@@ -158,8 +163,9 @@ public class BomberMenu extends JPanel
 	{
 		Graphics2D graphics2d = (Graphics2D)g;
 		graphics2d.setRenderingHints((RenderingHints)hints);
-		graphics2d.drawImage(backgroundImg, 0, 0, 17 << 4, 17 << 4, this);
+		graphics2d.drawImage(backgroundImg, 0, 0, 17 << 5, 17 << 5, this);
 	}
+	
 
 	static 
 	{

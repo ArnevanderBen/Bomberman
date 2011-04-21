@@ -72,7 +72,8 @@ implements ActionListener
 			spelers[j] = new BomberPlayer(this, bombermap, j + 1);
 		}
 		setDoubleBuffered(true);
-		setBounds(0, 0, 17 << 4, 17 << 4);
+		
+		setBounds(0, 0, 17 << 5, 17 << 5);
 		setOpaque(false);
 		bombermain.getLayeredPane().add(this, 0);
 	}
@@ -124,13 +125,13 @@ implements ActionListener
 		{
 			if(gameOver)
 			{
-				g1.drawImage(plaatjes[winnaar], 0, -25, 272, 272, this);
+				g1.drawImage(plaatjes[winnaar], 0, -50, 554, 554, this);
 				if(verstrekenSeconden == 0)
 				{
-					g1.drawImage(plaatjes[5], 0, 272 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2, this);
+					g1.drawImage(plaatjes[5], 0, 554 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2, this);
 				} else
 				{
-					g1.fillRect(0, 272 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
+					g1.fillRect(0, 554 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
 				}
 			}
 			if(spelerLinks <= 1 && timer == null)
@@ -157,13 +158,13 @@ implements ActionListener
 		graphics2d.setRenderingHints((RenderingHints)hints);
 		if(gameOver)
 		{
-			graphics2d.drawImage(plaatjes[winnaar], 0, -25, 272, 272, this);
+			graphics2d.drawImage(plaatjes[winnaar], 0, -50, 554, 554, this);
 			if(verstrekenSeconden == 0)
 			{
-				graphics2d.drawImage(plaatjes[5], 0, 272 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2, this);
+				graphics2d.drawImage(plaatjes[5], 0, 554 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2, this);
 			} else
 			{
-				graphics2d.fillRect(0,272 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
+				graphics2d.fillRect(0,554 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
 			}
 		}
 		if(spelerLinks <= 1 && timer == null)
@@ -180,7 +181,7 @@ implements ActionListener
 	public void actionPerformed(ActionEvent actionevent)
 	{
 		verstrekenSeconden++;
-		if(verstrekenSeconden >= 4)
+		if(verstrekenSeconden >= 2)
 		{
 			if(Main.J2)
 			{
@@ -206,7 +207,7 @@ implements ActionListener
 		{	
 			gamesound.close();
 			verstrekenSeconden %= 2;
-			paintImmediately(0, 272 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
+			paintImmediately(0, 554 - plaatjes[5].getHeight(this) / 2, plaatjes[5].getWidth(this) / 2, plaatjes[5].getHeight(this) / 2);
 		}
 	}
 	// Houd de keys in stand en laat zien wie er de winnaar is.(dmv een plaatje)

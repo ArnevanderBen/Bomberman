@@ -48,7 +48,7 @@ public class BomberImageButton
 			staat = 0;
 		}
 		paneel.repaint();
-		paneel.paintImmediately(x, y, w / 4, h / 4);
+		paneel.paintImmediately(x, y, w / 2, h / 2);
 	}
 	//Painten van de images
 	public void paint(Graphics g)
@@ -59,14 +59,14 @@ public class BomberImageButton
 		} else
 		{
 			Graphics g1 = g;
-			g1.drawImage(plaatjes[staat], x, y, w / 4, h / 4, null);
+			g1.drawImage(plaatjes[staat], x, y, w / 2, h / 2, null);
 		}
 	}
 	public void paint2D(Graphics g)
 	{
 		Graphics2D graphics2d = (Graphics2D)g;
 		graphics2d.setRenderingHints((RenderingHints)hints);
-		graphics2d.drawImage(plaatjes[staat], x, y, w / 4, h / 4, null);
+		graphics2d.drawImage(plaatjes[staat], x, y, w /2, h / 2, null);
 	}
 	//Houd de keys in stand op elke soort menu
 	static 
